@@ -1,0 +1,57 @@
+/* Rent Page Container */
+.rent-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* Page Title */
+.rent-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Description Text */
+.rent-description {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* QR Code Image Wrapper */
+.qr-code-img {
+    display: inline-block;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.qr-code-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.qr-code-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Instructions */
+.rent-instructions {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 20px;
+}

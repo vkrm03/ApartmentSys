@@ -9,9 +9,8 @@ const Dashboard = () => {
       <header className="header">
         <h1>Resident Dashboard</h1>
         <nav>
-          <a href="/homepg.html">Home</a>
-          <a href="userprof.html">Profile</a>
-          <a href="/resident/login/login.html">Logout</a>
+          <Link to="/login">Logout</Link>
+          <i className="fa-solid fa-right-from-bracket"></i>
         </nav>
       </header>
 

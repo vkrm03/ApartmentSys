@@ -5,6 +5,8 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import ContactSupport from "./ContactSupport";
 import Rent from "./components/Rent";
+import UpdateProfile from "./components/UpdateProfile";
+import Support from "./components/Support";
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/rent" element={<Rent />} />
         <Route path="/service" element={<ContactSupport />} />
+        <Route path="/update-profile" element={<UpdateProfile />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
     </Router>
   );

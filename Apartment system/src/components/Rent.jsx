@@ -8,8 +8,7 @@ const Rent = () => {
     <div className="rent-container">
       <h1 className="rent-title">Rent Payment</h1>
       <p className="rent-description">Scan the QR code below to pay your rent:</p>
-      <div className="qr-code-wrapper">
-        {/* <QRCode value={qrValue} size={200} level="H" /> */}
+      <div className="qr-code-img">
         <img src="https://www.easybillindia.com/wp-content/uploads/2024/02/what-is-Qr-code-_.jpg" alt="" />
       </div>
       <p className="rent-instructions">
