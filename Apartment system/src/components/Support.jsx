@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../../public/ContactSupport.css";
 
 const Support = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Support Query Submitted:", query);
-    alert("Your query has been submitted. We will get back to you soon!");
-    navigate("/dashboard"); // Redirect back to dashboard
+
+    try {
+      console.log(query);
+      const response = await axios.post("http://localhost:5000/support", { query });
+      
+      if (response.data.message === "Support query submitted successfully") {
+        alert("Your query has been submitted. We will get back to you soon!");
+        setQuery("");
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      alert("Error submitting query. Please try again later.");
+    }
   };
 
   return (

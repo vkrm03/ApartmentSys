@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   return (
     <div>
-      {/* Header */}
       <header className="header">
         <h1>Resident Dashboard</h1>
         <nav>
@@ -13,20 +12,17 @@ const Dashboard = () => {
           <i className="fa-solid fa-right-from-bracket"></i>
         </nav>
       </header>
-
-      {/* Main Container */}
       <div className="container">
         <div className="dashboard-grid">
-          {/* Profile Section */}
           <div className="card profile full-width">
             <img
               src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
               alt="Profile"
             />
             <div>
-              <h2>kadavulea Ajithyea</h2>
+              <h2>{localStorage.getItem("userName")}</h2> 
               <p>Apartment: A-102</p>
-              <p>Email: johndoe@example.com</p>
+              <p>{localStorage.getItem("userEmail")}</p>
             </div>
           </div>
 
