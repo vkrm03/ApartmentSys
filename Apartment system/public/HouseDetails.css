@@ -1,0 +1,16 @@
+.house-details table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .house-details th, .house-details td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .house-details th {
+    background-color: #2c3e50;
+    color: white;
+  }
+  

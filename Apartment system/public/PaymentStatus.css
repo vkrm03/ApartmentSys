@@ -1,0 +1,47 @@
+/* Payment Status */
+.payment-status {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.payment-status h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Table Styling */
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-table th, .payment-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.payment-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+/* Payment Status Badges */
+.status-paid {
+    background-color: #34a853;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status-pending {
+    background-color: #f4b400;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

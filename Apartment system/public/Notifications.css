@@ -1,0 +1,14 @@
+.notifications {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.notification-list {
+    list-style: none;
+}
+
+.notification-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+}

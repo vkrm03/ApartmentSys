@@ -57,7 +57,7 @@ const Login = () => {
             </button>
           </form>
           <p className="login-footer">
-            Don’t have an account? <a href="/register">Register</a>
+            Don’t have an account? Please contact admin.
           </p>
         </div>
       </div>

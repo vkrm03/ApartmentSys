@@ -3,12 +3,21 @@ import "../../public/Dashboard.css";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+
+  const onLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userEmail");
+    window.location.href = "/login";
+  };
+
+  
+
   return (
     <div>
       <header className="header">
         <h1>Resident Dashboard</h1>
         <nav>
-          <Link to="/login">Logout</Link>
+          <Link to="/login" onClick={onLogout}>Logout</Link>
           <i className="fa-solid fa-right-from-bracket"></i>
         </nav>
       </header>
@@ -16,12 +25,12 @@ const Dashboard = () => {
         <div className="dashboard-grid">
           <div className="card profile full-width">
             <img
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSLU5_eUUGBfxfxRd4IquPiEwLbt4E_6RYMw&s"
               alt="Profile"
             />
             <div>
               <h2>{localStorage.getItem("userName")}</h2> 
-              <p>Apartment: A-102</p>
+              <p></p>
               <p>{localStorage.getItem("userEmail")}</p>
             </div>
           </div>

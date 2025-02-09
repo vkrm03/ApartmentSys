@@ -8,6 +8,8 @@ import Rent from "./components/Rent";
 import UpdateProfile from "./components/UpdateProfile";
 import Support from "./components/Support";
 import Register from "./components/Register";
+import Sidebar from "./components/AdminDash";
+import AdminDash from "./components/AdminDash";
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<AdminDash />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/rent" element={<Rent />} />

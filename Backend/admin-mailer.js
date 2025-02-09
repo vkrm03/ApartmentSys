@@ -19,7 +19,7 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
-const sendInvitation = async (email) => {
+const sendInvitation = async (email, home_id) => {
   try {
     const token = crypto.randomBytes(20).toString("hex");
 
@@ -27,7 +27,7 @@ const sendInvitation = async (email) => {
     
     if (!user) {
       // Create user with only email, other fields null
-      user = new User({ email, name: null, password: null, invitationToken: token, tokenExpiry: Date.now() + 3600000 });
+      user = new User({ email, name: null,home: home_id, password: null, invitationToken: token, tokenExpiry: Date.now() + 3600000 });
     } else {
       // Update existing user's token and expiry
       user.invitationToken = token;
@@ -60,4 +60,4 @@ const sendInvitation = async (email) => {
 };
 
 // Call function to send invitation
-sendInvitation("viveksrinivasan274@gmail.com");
+sendInvitation("vikramrokith03@gmail.com", "122");
