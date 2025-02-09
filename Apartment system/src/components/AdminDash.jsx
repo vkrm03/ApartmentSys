@@ -5,6 +5,7 @@ import PaymentStatus from "./tabs/PaymentStatus";
 import MaintenanceRequests from "./tabs/MaintenanceRequests";
 import CommunityAnnouncements from "./tabs/CommunityAnnouncements";
 import Notifications from "./tabs/Notifications";
+import AddResident from "./tabs/addresident"; // New Tab Component
 import "../../public/AdminDash.css";
 
 const AdminDash = () => {
@@ -22,6 +23,8 @@ const AdminDash = () => {
         return <CommunityAnnouncements />;
       case "Notifications":
         return <Notifications />;
+      case "Add Resident":
+        return <AddResident />; // New Tab
       default:
         return <h2>Welcome to the Admin Dashboard</h2>;
     }

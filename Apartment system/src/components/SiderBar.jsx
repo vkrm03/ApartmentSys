@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { 
-  FaHome, FaMoneyBill, FaWrench, FaBullhorn, FaBell, 
-  FaCog, FaBars, FaArrowLeft, FaUserCircle 
+  FaHome, FaMoneyBill, FaWrench, FaBullhorn, FaBell, FaUser
+  , FaBars, FaArrowLeft, FaUserCircle 
 } from "react-icons/fa";
 import "../../public/SiderBar.css";
 
@@ -40,6 +40,7 @@ const Sidebar = ({ setActiveTab }) => {
           <SidebarItem icon={<FaWrench />} text="Maintenance Requests" isOpen={isOpen} setActiveTab={setActiveTab} className="active"/>
           <SidebarItem icon={<FaBullhorn />} text="Community Announcements" isOpen={isOpen} setActiveTab={setActiveTab} className="active"/>
           <SidebarItem icon={<FaBell />} text="Notifications" isOpen={isOpen} setActiveTab={setActiveTab} className="active"/>
+          <SidebarItem icon={<FaUser />} text="Add resident" isOpen={isOpen} setActiveTab={setActiveTab} className="active"/>
         </ul>
       </div>
     </div>
