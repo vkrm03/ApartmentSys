@@ -23,8 +23,8 @@ const AdminDash = () => {
         return <CommunityAnnouncements />;
       case "Notifications":
         return <Notifications />;
-      case "Add Resident":
-        return <AddResident />; // New Tab
+      case "Add resident":
+        return <AddResident />;
       default:
         return <h2>Welcome to the Admin Dashboard</h2>;
     }

@@ -6,6 +6,7 @@ const Notifications = () => {
     { id: 1, message: "New maintenance request received", time: "2 hours ago" },
     { id: 2, message: "Payment reminder sent to all residents", time: "Yesterday" },
   ];
+  
 
   return (
     <div className="notifications">

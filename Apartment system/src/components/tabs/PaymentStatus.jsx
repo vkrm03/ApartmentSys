@@ -5,9 +5,9 @@ import "../../../public/PaymentStatus.css";
 
 const PaymentStatus = () => {
   const [payments, setPayments] = useState([
-    { houseNo: "A-101", owner: "John Doe", status: "Pending", amount: "₹5,000" },
-    { houseNo: "B-202", owner: "Alice Smith", status: "Pending", amount: "₹5,000" },
-    { houseNo: "C-303", owner: "Bob Johnson", status: "Paid", amount: "₹5,000" },
+    { houseNo: "101", owner: "John", status: "Pending", amount: "₹5,000" },
+    { houseNo: "202", owner: "Arun", status: "Pending", amount: "₹5,000" },
+    { houseNo: "303", owner: "Kumar", status: "Paid", amount: "₹5,000" },
   ]);
 
   const toggleStatus = (index) => {

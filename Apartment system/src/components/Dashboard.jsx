@@ -1,16 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../public/Dashboard.css";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+  const [userName, setUserName] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [announcements, setAnnouncements] = useState([]);
+
+  // Fetch Announcements
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/community-announcements");
+        const data = await response.json();
+        console.log("Fetched Announcements:", data); // Debugging log
+        setAnnouncements(data);
+      } catch (error) {
+        console.error("Error fetching announcements:", error);
+      }
+    };
+
+    fetchAnnouncements();
+  }, []);
+
+  // Log announcements when they update
+  useEffect(() => {
+    console.log("Updated Announcements:", announcements);
+  }, [announcements]);
+
+  // Fetch User Name
+  useEffect(() => {
+    const fetchUserName = async () => {
+      const email = localStorage.getItem("userEmail");
+      console.log("User Email:", email); // Debugging log
+
+      try {
+        const response = await fetch(`http://localhost:5000/getUserName?email=${email}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          setUserName(data.name);
+        } else {
+          setError(data.message || "Failed to fetch user data.");
+        }
+      } catch (err) {
+        setError("Server error. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserName();
+  }, []);
 
   const onLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userEmail");
     window.location.href = "/login";
   };
-
-  
 
   return (
     <div>
@@ -21,16 +69,17 @@ const Dashboard = () => {
           <i className="fa-solid fa-right-from-bracket"></i>
         </nav>
       </header>
+
       <div className="container">
         <div className="dashboard-grid">
+          {/* Profile Section */}
           <div className="card profile full-width">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSLU5_eUUGBfxfxRd4IquPiEwLbt4E_6RYMw&s"
               alt="Profile"
             />
             <div>
-              <h2>{localStorage.getItem("userName")}</h2> 
-              <p></p>
+              <h2>{userName || "Guest"}</h2> 
               <p>{localStorage.getItem("userEmail")}</p>
             </div>
           </div>
@@ -45,14 +94,21 @@ const Dashboard = () => {
             </ul>
           </div>
 
-          {/* Community Notice */}
+          {/* Community Announcements Section */}
           <div className="card notifications">
-            <h2>Community Notice</h2>
-            <ul>
-              <li>Swimming pool closed till Friday for maintenance</li>
-              <li>Pongal Celebration</li>
-              <li>The Gym subscription increased by 100rs</li>
-            </ul>
+            <h2>Community Announcements</h2>
+            <div className="announcements">
+              {announcements.length > 0 ? (
+                announcements.map((ann) => (
+                  <div key={ann._id} className="announcement">
+                    <h3>{ann.title}</h3>
+                    <p>{ann.details}</p>
+                  </div>
+                ))
+              ) : (
+                <p>No announcements available</p>
+              )}
+            </div>
           </div>
 
           {/* Payment History */}
